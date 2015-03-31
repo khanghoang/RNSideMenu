@@ -9,6 +9,7 @@ var {
   AppRegistry,
   StyleSheet,
   PanResponder,
+  LayoutAnimation,
   Text,
   View,
 } = React;
@@ -20,7 +21,7 @@ var SideMenu = React.createClass({
   _previousTop: 0,
   _sideViewStyles: {},
 
-  sideView: (null : ?React.Element),
+  sideView: React.Element,
 
   componentWillMount: function() {
     this._panResponder = PanResponder.create({
@@ -62,23 +63,33 @@ var SideMenu = React.createClass({
   },
   _handlePanResponderMove: function(e: Object, gestureState: Object) {
     this._sideViewStyles.left = this._previousLeft + gestureState.dx; 
+    if(this._sideViewStyles.left < 0) {
+      return;
+    }
+   
     this._updatePosition();
   },
   _handlePanResponderEnd: function(e: Object, gestureState: Object) {
-    this._previousLeft += gestureState.dx;
+    var config = layoutAnimationConfigs[0];
+    LayoutAnimation.configureNext(config);
+    this._sideViewStyles.left = gestureState.dx > (320 / 4) ? 240 : 0;
+    this._updatePosition();
+    this._previousLeft = this._sideViewStyles.left;
   },
 
   render: function() {
     return (
       <View style={styles.container}>
         <View 
+        style={styles.sideView}
+        >
+        </View>
+        <View 
         ref={(sideView) => {
           this.sideView = sideView
         }}
-        style={styles.sideView}
+        style={styles.frontView}
         {...this._panResponder.panHandlers}>
-        </View>
-        <View style={styles.frontView}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
@@ -112,18 +123,55 @@ var styles = StyleSheet.create({
     flex: 1,
     width: 320,
     height: 568,
-    backgroundColor: "#000000",
+    backgroundColor: "#dddddd",
     position: 'absolute',
     top: 0,
     left: 0,
   },
-  // frontView: {
-  //   flex: 1,
-  //   position: 'absolute',
-  //   left: 0,
-  //   top: 0,
-  //   backgroundColor: "#333333",
-  // }
+  frontView: {
+    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    backgroundColor: "#ffffff",
+    width: 320,
+    height: 568,
+  }
 });
+
+var animations = {
+  layout: {
+    spring: {
+      duration: 0.5,
+      create: {
+        duration: 0.3,
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity,
+      },
+      update: {
+        type: LayoutAnimation.Types.spring,
+        springDamping: 0.7,
+      },
+    },
+    easeInEaseOut: {
+      duration: 0.3,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.scaleXY,
+      },
+      update: {
+        delay: 0.1,
+        type: LayoutAnimation.Types.easeInEaseOut,
+      },
+    },
+  },
+};
+
+
+var layoutAnimationConfigs = [
+  animations.layout.spring,
+  animations.layout.easeInEaseOut,
+];
+
 
 AppRegistry.registerComponent('SideMenu', () => SideMenu);
