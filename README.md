@@ -1,1 +1,3 @@
 # RNSideMenu
+
+![Demo](demo.gif)
