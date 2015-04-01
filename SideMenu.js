@@ -1,6 +1,9 @@
 'use strict';
 
 var React = require('react-native');
+var Dimensions = require('Dimensions');
+var window = Dimensions.get('window');
+
 var {
   AppRegistry,
   StyleSheet,
@@ -69,7 +72,7 @@ var SideMenu = React.createClass({
   _handlePanResponderEnd: function(e: Object, gestureState: Object) {
     var config = layoutAnimationConfigs[0];
     LayoutAnimation.configureNext(config);
-    this._sideViewStyles.left = gestureState.dx > (320 / 4) ? 240 : 0;
+    this._sideViewStyles.left = gestureState.dx > (window.width / 4) ? parseInt(window.width * 2 / 3) : 0;
     this._updatePosition();
     this._previousLeft = this._sideViewStyles.left;
   },
@@ -104,8 +107,8 @@ var styles = StyleSheet.create({
   },
   sideView: {
     flex: 1,
-    width: 320,
-    height: 568,
+    width: window.width,
+    height: window.height,
     backgroundColor: "#dddddd",
     position: 'absolute',
     top: 0,
@@ -117,8 +120,8 @@ var styles = StyleSheet.create({
     left: 0,
     top: 0,
     backgroundColor: "#ffffff",
-    width: 320,
-    height: 568,
+    width: window.width,
+    height: window.height,
   }
 });
 
