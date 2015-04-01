@@ -7,7 +7,7 @@
 
 # Examples
 
-Clone this repo and take a look of the 'index.ios.js'
+Clone this repo and take a look of the *index.ios.js*
 
 # Usage
 
@@ -37,4 +37,7 @@ var App = React.createClass({
 * [ ] Make more examples
 
 # Contribute
-### Pull requests are welcome. 
+#### Pull requests are welcome. 
+
+# About me
+Follow me at [@khanght](https://twitter.com/khanght)
