@@ -7,7 +7,7 @@
 
 # Examples
 
-Clone this repo and take a look of the *index.ios.js*
+Clone this repo and take a look of the **index.ios.js**
 
 # Usage
 
