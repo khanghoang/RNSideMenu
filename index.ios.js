@@ -12,11 +12,15 @@ var {
   StyleSheet,
   PanResponder,
   LayoutAnimation,
+  TouchableHighlight,
   Text,
   View,
 } = React;
 
 var FrontView = React.createClass({
+  _onTouch: function () {
+    this.props.onUserClickButton();
+  },
   render: function () {
     return (
       <View style={styles.container}>
@@ -27,6 +31,11 @@ var FrontView = React.createClass({
           To get started, edit index.ios.js{'\n'}
           Press Cmd+R to reload
         </Text>
+        <TouchableHighlight onPress={this._onTouch}>
+        <Text>
+        touch
+        </Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -44,14 +53,28 @@ var SideView = React.createClass({
   }
 }) 
 
-var App = React.createClass({
+var AppSideMenu = React.createClass({
+
+  getInitialState: function () {
+    return {
+      show: false,
+    }
+  },
+
+  _handleUserClickButton: function() {
+    this.setState({show: !this.state.show});
+  },
+
   render: function () {
     return (
       <View style={styles.container} >
-        <SideMenu 
-        frontView={<FrontView />}
-        sideView={<SideView />}
-        />
+      <SideMenu 
+      frontView={<FrontView 
+        onUserClickButton={this._handleUserClickButton}
+        />} 
+      sideView={<SideView />}
+      show={this.state.show} 
+      />
       </View>
     );
   }
@@ -75,4 +98,4 @@ var styles = StyleSheet.create({
 })
 
 
-AppRegistry.registerComponent('SideMenu', () => App);
+AppRegistry.registerComponent('SideMenu', () => AppSideMenu);
