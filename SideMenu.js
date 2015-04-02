@@ -22,14 +22,6 @@ var SideMenu = React.createClass({
 
   sideView: React.Element,
 
-  componentWillReceiveProps: function (nextProps) {
-    var config = layoutAnimationConfigs[0];
-    LayoutAnimation.configureNext(config);
-    this._sideViewStyles.left = nextProps.show ? parseInt(window.width * 2 / 3) : 0;
-    this._updatePosition();
-    this._previousLeft = this._sideViewStyles.left;
-  },
-
   componentWillMount: function() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this._handleStartShouldSetPanResponder,
@@ -77,12 +69,32 @@ var SideMenu = React.createClass({
    
     this._updatePosition();
   },
+
   _handlePanResponderEnd: function(e: Object, gestureState: Object) {
     var config = layoutAnimationConfigs[0];
     LayoutAnimation.configureNext(config);
     this._sideViewStyles.left = gestureState.dx > (window.width / 4) ? parseInt(window.width * 2 / 3) : 0;
     this._updatePosition();
     this._previousLeft = this._sideViewStyles.left;
+
+    var stateShow = this._previousLeft === 0 ? false : true; 
+    this.setState({show: stateShow});
+  },
+
+  getInitialState: function () {
+    return {
+      show: false,
+    }
+  },
+
+  _handleUserClickButton: function() {
+    var state = !this.state.show;
+    var config = layoutAnimationConfigs[0];
+    LayoutAnimation.configureNext(config);
+    this._sideViewStyles.left = state ? parseInt(window.width * 2 / 3) : 0;
+    this._updatePosition();
+    this._previousLeft = this._sideViewStyles.left;
+    this.setState({show: state});
   },
 
   render: function() {
@@ -99,7 +111,9 @@ var SideMenu = React.createClass({
         }}
         style={styles.frontView}
         {...this._panResponder.panHandlers}>
-        {this.props.frontView}
+        {<this.props.frontView 
+        __toggleSideView={this._handleUserClickButton}
+        />}
         </View>
       </View>
     );

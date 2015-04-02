@@ -19,7 +19,7 @@ var {
 
 var FrontView = React.createClass({
   _onTouch: function () {
-    this.props.onUserClickButton();
+    this.props.__toggleSideView();
   },
   render: function () {
     return (
@@ -54,26 +54,12 @@ var SideView = React.createClass({
 }) 
 
 var AppSideMenu = React.createClass({
-
-  getInitialState: function () {
-    return {
-      show: false,
-    }
-  },
-
-  _handleUserClickButton: function() {
-    this.setState({show: !this.state.show});
-  },
-
   render: function () {
     return (
       <View style={styles.container} >
       <SideMenu 
-      frontView={<FrontView 
-        onUserClickButton={this._handleUserClickButton}
-        />} 
+      frontView={FrontView}
       sideView={<SideView />}
-      show={this.state.show} 
       />
       </View>
     );
