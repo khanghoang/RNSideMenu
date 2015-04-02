@@ -31,10 +31,11 @@ var App = React.createClass({
 # Route map
 * [x] Basic views and animations
 * [x] Pass frontView and sideView as props
-* [ ] Make it as npm module
+* [x] Make it as npm module
 * [ ] Mutiple directions of side menu
-* [ ] Helper actions 
+* [ ] Helper actions for **toggle**, **open**, **close**
 * [ ] Make more examples
+* [ ] Change the name to react-native-side-menu & create another repo to examples
 
 # Contribute
 #### Pull requests are welcome. 
