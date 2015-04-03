@@ -40,5 +40,7 @@ var App = React.createClass({
 # Contribute
 #### Pull requests are welcome. 
 
+This component can not be done without helps of [@ToanNG](https://github.com/ToanNG) & [@vu.nguyen](https://github.com/vunguyentuan)
+
 # About me
 Follow me at [@khanght](https://twitter.com/khanght)
