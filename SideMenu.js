@@ -20,6 +20,11 @@ var SideMenu = React.createClass({
   _previousTop: 0,
   _sideViewStyles: {},
 
+  getDefaultProps: function () {
+    return {
+    }
+  },
+
   sideView: React.Element,
 
   componentWillMount: function() {
@@ -38,10 +43,6 @@ var SideMenu = React.createClass({
       left: this._previousLeft,
       top: this._previousTop,
     };
-  },
-
-  componentDidMount: function() {
-    this._updatePosition();
   },
 
   _updatePosition: function() {
@@ -85,6 +86,14 @@ var SideMenu = React.createClass({
     return {
       show: false,
     }
+  },
+
+  componentDidMount: function() {
+    this.props.toggleSideView = function () {
+      this._handleUserClickButton();
+    }.bind(this);
+
+    this._updatePosition();
   },
 
   _handleUserClickButton: function() {
@@ -180,14 +189,5 @@ var layoutAnimationConfigs = [
   animations.layout.spring,
   animations.layout.easeInEaseOut,
 ];
-
-SideMenu.prototype.toggleSideView = function () {
-  debugger;
-  // var config = layoutAnimationConfigs[0];
-  // LayoutAnimation.configureNext(config);
-  // this._sideViewStyles.left = gestureState.dx > (window.width / 4) ? parseInt(window.width * 2 / 3) : 0;
-  // this._updatePosition();
-  // this._previousLeft = this._sideViewStyles.left;
-}
 
 module.exports = SideMenu;

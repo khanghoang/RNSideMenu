@@ -18,9 +18,11 @@ var {
 } = React;
 
 var FrontView = React.createClass({
-  _onTouch: function () {
-    this.props.__toggleSideView();
+
+  _test: function() {
+    sideMenu.props.toggleSideView();
   },
+
   render: function () {
     return (
       <View style={styles.container}>
@@ -31,7 +33,7 @@ var FrontView = React.createClass({
           To get started, edit index.ios.js{'\n'}
           Press Cmd+R to reload
         </Text>
-        <TouchableHighlight onPress={this._onTouch}>
+        <TouchableHighlight onPress={this._test}>
         <Text>
         touch
         </Text>
@@ -53,14 +55,17 @@ var SideView = React.createClass({
   }
 }) 
 
+global.sideMenu = 
+      <SideMenu
+      frontView={FrontView}
+      sideView={<SideView />}
+      />;
+
 var AppSideMenu = React.createClass({
   render: function () {
     return (
       <View style={styles.container} >
-      <SideMenu 
-      frontView={FrontView}
-      sideView={<SideView />}
-      />
+      {sideMenu}
       </View>
     );
   }
