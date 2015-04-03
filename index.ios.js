@@ -6,6 +6,7 @@
 
 var React = require('react-native');
 var SideMenu = require('./SideMenu.js');
+var FrontView = require("./FrontView");
 
 var {
   AppRegistry,
@@ -16,32 +17,6 @@ var {
   Text,
   View,
 } = React;
-
-var FrontView = React.createClass({
-
-  _test: function() {
-    sideMenu.props.toggleSideView();
-  },
-
-  render: function () {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={{textAlign: 'center'}}>
-          To get started, edit index.ios.js{'\n'}
-          Press Cmd+R to reload
-        </Text>
-        <TouchableHighlight onPress={this._test}>
-        <Text>
-        touch
-        </Text>
-        </TouchableHighlight>
-      </View>
-    );
-  }
-}) 
 
 var SideView = React.createClass({
   render: function () {
