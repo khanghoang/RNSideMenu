@@ -18,16 +18,9 @@ var FrontView = React.createClass({
   render: function () {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={{textAlign: 'center'}}>
-          To get started, edit index.ios.js{'\n'}
-          Press Cmd+R to reload
-        </Text>
         <TouchableHighlight onPress={this._test}>
         <Text>
-        touch
+        Touch me to toggle side view
         </Text>
         </TouchableHighlight>
       </View>
