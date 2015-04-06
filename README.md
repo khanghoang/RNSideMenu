@@ -12,7 +12,7 @@ Clone this [repo](https://github.com/khanghoang/RNSideView-Examples) and take a 
 # Usage
 
 ```javascript
-var SideMenu = require('./SideMenu.js');
+var SideMenu = require('sidemenu');
 
 global.sideMenu = 
       <SideMenu
@@ -40,8 +40,9 @@ Then at any place of you code, if you wanna toggle **SideView** manually, call s
 * [ ] Mutiple directions of side menu
 * [ ] Helper actions for ~~**toggleSideView()**~~, **open()**, **close()**, **chageFrontView()**, **changeSideView()**
 * [ ] Make more examples
-* [ ] Change the name to react-native-side-menu & create another repo to examples
-* [ ] Clean this repo to just contain lib files, (now it also contains xCode files)
+* [ ] Change the name to react-native-side-menu
+* [x] create another repo to examples
+* [x] Clean this repo to just contain lib files, (now it also contains xCode files)
 
 # Contribute
 #### Pull requests are welcome. 
