@@ -2,7 +2,7 @@
 
 # Preview
 <p align="center">
-  <img src="demo.gif" /> 
+  <img src="https://raw.githubusercontent.com/khanghoang/RNSideView-Examples/master/demo.gif" /> 
 </p>
 
 # Examples
