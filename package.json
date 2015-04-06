@@ -7,7 +7,7 @@
   "dependencies": {
     "react-native": "^0.3.4"
   },
-  "description": "![Demo](demo.gif)",
+  "description": "iOS Side View with React Native </br> ![Demo](://raw.githubusercontent.com/khanghoang/RNSideView-Examples/master/demo.gif)",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
