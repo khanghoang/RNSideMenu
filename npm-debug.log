@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/khanghoangtrieu/Documents/PetProjects/SideMenu',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package.tgz',
+9 verbose tar pack   '/Users/khanghoangtrieu/Documents/PetProjects/SideMenu' ]
+10 verbose tarball /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package.tgz
+11 verbose folder /Users/khanghoangtrieu/Documents/PetProjects/SideMenu
+12 info prepublish sidemenu@0.0.4
+13 verbose addLocalTarball adding from inside cache /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package.tgz
+14 silly cache afterAdd sidemenu@0.0.4
+15 verbose afterAdd /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package/package.json not in flight; writing
+16 verbose afterAdd /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package/package.json written
+17 silly publish { name: 'sidemenu',
+17 silly publish   version: '0.0.4',
+17 silly publish   scripts: { start: 'node_modules/react-native/packager/packager.sh' },
+17 silly publish   dependencies: { 'react-native': '^0.3.4' },
+17 silly publish   description: 'iOS Side View with React Native </br> ![Demo](://raw.githubusercontent.com/khanghoang/RNSideView-Examples/master/demo.gif)',
+17 silly publish   main: 'index.js',
+17 silly publish   devDependencies: {},
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'https://github.com/khanghoang/RNSideMenu.git' },
+17 silly publish   keywords: [ 'reactnative', 'react', 'sidemenu' ],
+17 silly publish   author:
+17 silly publish    { name: 'Khang Hoang',
+17 silly publish      email: 'hoangtrieukhang@gmail.com',
+17 silly publish      url: 'https://twitter.com/khanght' },
+17 silly publish   license: '"MIT"',
+17 silly publish   bugs: { url: 'https://github.com/khanghoang/RNSideMenu/issues' },
+17 silly publish   homepage: 'https://github.com/khanghoang/RNSideMenu',
+17 silly publish   readme: '# RNSideMenu\n\n# Preview\n<p align="center">\n  <img src="https://raw.githubusercontent.com/khanghoang/RNSideView-Examples/master/demo.gif" /> \n</p>\n\n# Examples\n\nClone this [repo](https://github.com/khanghoang/RNSideView-Examples) and take a look of the **index.ios.js**\n\n# Usage\n\n```javascript\nvar SideMenu = require(\'sidemenu\');\n\nglobal.sideMenu = \n      <SideMenu\n      frontView={FrontView}\n      sideView={<SideView />}\n      />;\n\nvar App = React.createClass({\n  render: function () {\n    return (\n      <View style={styles.container} >\n        {sideMenu}\n      </View>\n    );\n  }\n})\n```\n\nThen at any place of you code, if you wanna toggle **SideView** manually, call sideMenu.props.toggleSideView()\n\n# Route map\n* [x] Basic views and animations\n* [x] Pass frontView and sideView as props\n* [x] Make it as npm module\n* [ ] Mutiple directions of side menu\n* [ ] Helper actions for ~~**toggleSideView()**~~, **open()**, **close()**, **chageFrontView()**, **changeSideView()**\n* [ ] Make more examples\n* [ ] Change the name to react-native-side-menu\n* [x] create another repo to examples\n* [x] Clean this repo to just contain lib files, (now it also contains xCode files)\n\n# Contribute\n#### Pull requests are welcome. \n\nThis component can not be done without helps from [@ToanNG](https://github.com/ToanNG) & [@vu.nguyen](https://github.com/vunguyentuan)\n\n# About me\nFollow me at [@khanght](https://twitter.com/khanght)\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '4ea433649423b153c6b5f3339ab04b2ddc5525a1',
+17 silly publish   _id: 'sidemenu@0.0.4',
+17 silly publish   _shasum: '8011d4a1fea1008d55dc5602ebd9f2fccf7b50b7',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name sidemenu
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/sidemenu
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /Users/khanghoangtrieu/.npm/sidemenu/0.0.4/package.tgz
+24 verbose request uri https://registry.npmjs.org/sidemenu
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 9:06:04 PM
+27 verbose request id 4a2d47dcc2ea7a32
+28 http request PUT https://registry.npmjs.org/sidemenu
+29 http 409 https://registry.npmjs.org/sidemenu
+30 verbose headers { date: 'Mon, 06 Apr 2015 14:06:05 GMT',
+30 verbose headers   server: 'Apache',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '17',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   'x-served-by': 'cache-lax1422-LAX',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1428329165.622361,VS0,VE194',
+30 verbose headers   'keep-alive': 'timeout=10, max=50',
+30 verbose headers   connection: 'Keep-Alive' }
+31 verbose request invalidating /Users/khanghoangtrieu/.npm/registry.npmjs.org/sidemenu on PUT
+32 verbose request uri https://registry.npmjs.org/sidemenu?write=true
+33 verbose request no auth needed
+34 info attempt registry request try #1 at 9:06:05 PM
+35 http request GET https://registry.npmjs.org/sidemenu?write=true
+36 http 200 https://registry.npmjs.org/sidemenu?write=true
+37 verbose stack Error: cannot modify pre-existing version
+37 verbose stack     at conflictError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:184:11)
+37 verbose stack     at CachingRegistryClient.putNext (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:147:15)
+37 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:129:15
+37 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache/caching-client.js:52:8
+37 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+37 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:73:16
+37 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+37 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:262:12)
+37 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:178:14)
+37 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+38 verbose pkgid sidemenu
+39 verbose cwd /Users/khanghoangtrieu/Documents/PetProjects/SideMenu
+40 error Darwin 14.1.0
+41 error argv "node" "/usr/local/bin/npm" "publish"
+42 error node v0.12.0
+43 error npm  v2.5.1
+44 error code EPUBLISHCONFLICT
+45 error publish fail Cannot publish over existing version.
+45 error publish fail Update the 'version' field in package.json and try again.
+45 error publish fail
+45 error publish fail To automatically increment version numbers, see:
+45 error publish fail     npm help version
+46 verbose exit [ 1, true ]
