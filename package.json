@@ -8,7 +8,7 @@
     "react-native": "^0.3.4"
   },
   "description": "![Demo](demo.gif)",
-  "main": "SideMenu.js",
+  "main": "index.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
