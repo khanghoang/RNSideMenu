@@ -1,8 +1,11 @@
 'use strict';
 
-var React = require('react-native');
-var Dimensions = require('Dimensions');
-var window = Dimensions.get('window');
+import React from 'react';
+import {
+  Dimensions
+} from 'react-native';
+
+cosnt window = Dimensions.get('window');
 
 var {
   AppRegistry,
